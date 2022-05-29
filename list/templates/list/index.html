@@ -1,0 +1,51 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS20 Course List</title>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" >
+    </head>
+
+    <body id="bg" style="background-image: url('{% static 'img/back.jpg' %}');">
+     <h2>Welcome To CS20 Course List Manager</h2>
+
+  <form method="post" action="">
+          
+  <div class="container">
+    {% csrf_token %}
+
+    <label><b>Choose Week</b></label>
+      <br />
+      <input value="week1" type="radio" name="week"/>Week 1<br />
+      <input value="week2" type="radio" name="week"/>Week 2<br />
+      <input value="week3" type="radio" name="week" />Week 3<br />
+      <input value="week4" type="radio" name="week" />Week 4<br />
+      <input value="week5" type="radio" name="week"/>Week 5<br />
+      <input value="week6" type="radio" name="week" />Week 6<br />
+      <input value="week7" type="radio" name="week" />Week 7<br />
+      <input value="week8"  type="radio" name="week" />Week 8<br />
+      <br>
+
+    <label ><b>Course Name</b></label>
+    <br>
+    <input type="text" placeholder="Enter course name" name="course_name"  required>
+    <br><br>
+
+    <label ><b>Resource Person</b></label>
+    <br>
+    <input type="text" placeholder="Enter resource person name" name="resource_person"  required>
+    <br><br>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+    
+  </div>
+
+ 
+        </form>
+    </body>
+</html>
+

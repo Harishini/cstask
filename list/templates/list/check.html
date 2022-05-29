@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Course List</title>
+
+        <style>
+            h2{
+                text-align: center;
+            }
+            #course {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            #course td, #course th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            
+            #course tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #course tr:hover {background-color: #ddd;}
+            
+            #course th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #3022b4;
+              color: white;
+            }
+
+            a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #3022b4;
+  color: white;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+
+
+.round {
+  border-radius: 50%;
+}
+            </style>
+    </head>
+    <body>
+       <h2> COURSE LIST</h2>
+       <br>
+        <table class="table" id="course">
+            <thead>
+                <tr>
+                <th scope="col">SNO</th>
+                <th scope="col">WEEK</th>
+                <th scope="col">COURSE</th>
+                <th scope="col">SPEAKER</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in detail%}
+                <tr>
+                <td scope="row">{{ forloop.counter }}</th>
+                <td>{{item.week}}</td>
+                <td>{{item.course_name}}</td>
+                <td>{{item.resource_person}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+<br>
+<br>
+        <a href="{% url 'courseadded' %}" class="previous">&laquo; Back</a>
+        
+    </body>
+</html>
